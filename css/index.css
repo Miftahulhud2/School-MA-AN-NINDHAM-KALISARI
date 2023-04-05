@@ -1,0 +1,294 @@
+/** copy header */
+*
+{
+    /** cara agar tidak ada sisa dalam width 100% */
+    /* overflow-x: hidden; */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.tophead
+{
+    position: relative;
+    text-align: center;
+    color: white;
+    background-color: #112c66;
+    height: 3vh;
+    
+}
+.tophead a
+{
+    text-decoration: none;
+    color: white;
+}
+.header
+{
+    /* position: static; */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 11vh;
+    background-color: #00933f;
+    color: white;
+}
+/* header sticky yang membuat  headere mengikuti scroll*/
+.sticky 
+{
+position: fixed;
+top: 0;
+width: 100%;
+}
+
+.sticky + .content 
+{
+padding-top: 102px;
+}
+/* end header sticky yang membuat  headere mengikuti scroll*/
+.header img
+{
+    position: relative;
+    padding: 10px 10px;
+    max-height: 10vh;
+}
+.header nav
+{
+    left: 5vw;
+    position: relative;
+}
+.header nav ul
+{
+    list-style: none;
+    /* background-color: #22438c; */
+}
+.header nav ul li
+{
+    display: inline-block;
+    position: relative;
+}
+.header nav ul li a
+{
+    display: block;
+    padding: 1rem;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-align: center;
+}
+.header nav ul li ul.dropdown li
+{
+    display: block;
+}
+.header nav ul li ul.dropdown
+{
+    width: auto;
+    background-color: #00733f;
+    position: absolute;
+    z-index: 100000;
+    display: none;
+    
+}
+.header nav ul li a:hover
+{
+    background-color: #04532f;
+    border-radius: 4%;
+}
+.header nav ul li:hover ul.dropdown::before{
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #00733f;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.header nav ul li:hover ul.dropdown
+{
+    justify-content: center;
+    margin-top: 10px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4%;
+}
+/** end copy header */
+
+/** content */
+.content
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* background-color: aqua; */
+}
+.content img
+{
+    /* position: relative; */
+    z-index: 0;
+    width: 100%;
+    max-height: 100vh;
+}
+.content .banner
+{ 
+    top: -300px;
+    left: 20px;
+    width: 400px;
+    padding: 10px 20px 30px 40px;
+    position: relative;
+    z-index: -0;
+    background-color: white;
+    opacity: 80%;
+    border-radius: 10px ;
+}
+
+/* .banner.sticky {
+
+} */
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, 50%);
+    text-align: center;
+    color: white;
+}
+.content .banner h2
+{
+    font-weight: 900;
+    color: #00933f;
+    opacity: 1;
+}
+.content .banner p
+{
+    font-weight: 400;
+    color: #00933f;
+    opacity: 1;
+}
+.featured-content
+{
+    /* background-color: bisque; */
+    display: flex;
+    align-content: center;
+    position: relative;
+    z-index: -1;
+    top: -110px;
+}
+.featured-content .card
+{
+    display: block;
+    background-color: #b6b6b6;
+    position: relative;
+    width: 650px;
+    margin: 1% 1%;
+    padding: 2%;
+    border-radius: 3%;
+}
+.featured-content .card img{
+    float: left;
+    max-width: 200px;
+    margin-right: 1rem;
+}
+.featured-content .card h2
+{
+    display: block;
+    margin: 0;
+    text-align: justify;
+    color: #f1f6ff;
+    font-weight: 900;
+    text-shadow: 5px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.featured-content .card p
+{
+    display: block;
+    text-align: justify;
+    margin: 0;
+    
+}
+.content .berita
+{
+    background-color: rgb(63, 165, 42);
+    height: 500px;
+}
+.content .berita .container
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1%;
+}
+ 
+.content .berita .container .card
+{
+    
+    background-color: #f1f6ff;
+    margin: 1% 1%;
+    width: 45%;
+    padding: 1% 1% 1%;
+    border-radius: 2% 5%;
+}
+/** end content */
+
+/* todo footer */
+.footer
+{
+    position: relative;
+    bottom: 0;
+    z-index: 10;
+    background-color: #112c66;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    /* margin-top: 1%; */
+}
+.footer .information
+{
+    margin-top: 1%;
+}
+.footer .information a
+{
+    color: white;
+    padding-top: 2%;
+    text-decoration: none;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+/* todo end footer */
+
+/** tampilan hp */
+@media (max-width: 1295px) {
+    .tophead
+    {
+        height: auto;
+    }
+    nav
+    {
+        display: none;
+    }
+}
+@media (max-width: 680px){
+    .banner{
+        position: relative;
+        top: 10px;
+    }
+    .content .banner p
+    {
+        display: none;
+    }
+    .content .banner
+    {
+        top: -90px;
+        width: 270px;
+    }
+    .featured-content
+    {
+        margin-top: 70px;
+    }
+    .footer
+    {
+        position: relative;
+        bottom: 0;
+    }
+}
